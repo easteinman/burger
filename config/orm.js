@@ -25,12 +25,12 @@ function objToSql(ob) {
     var value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Big Mac => 'Big Mac')
+      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {burger_name: 'Big Mac'} => ["burger_name='Big Mac'"]
-      // e.g. {devoured: true} => ["devoured=true"]
+      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(key + "=" + value);
     }
   }
@@ -70,7 +70,7 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {burger_name: big mac, devoured: true}
+  // An example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -102,5 +102,6 @@ var orm = {
     });
   }
 };
-// Export the orm object for the model (burger.js).
+
+// Export the orm object for the model (cat.js).
 module.exports = orm;
