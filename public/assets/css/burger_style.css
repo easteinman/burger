@@ -1,19 +1,49 @@
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
+body {
+  background-color: black;
+}
+
+li, label {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+}
+
+h2 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 25px;
+  font-family: 'Faster One', cursive;
+}
+
+.jumbotron {
+  color: white;
+  font-family: 'Faster One', cursive;
+  background-color: black;
+}
+
+#eaten-card, #not-eaten-card, #add-burger-card {
+  margin: 25px;
+  border-width: 8px;
+  border-color: gray;
+}
+
+.change-devoured, .add-button {
+  font-family: 'Inconsolata', monospace;
+	color: green;
+	font-size: 15px;
+	padding: 5px;
+	background-color: orange;
+	border-width: 2px;
+  border-color: black;
+  border-radius: 4px;
+  float: right;
+}
+
+#ca {
+  border-width: 3px;
+  border-color: black;
+}

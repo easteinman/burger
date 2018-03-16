@@ -1,38 +1,84 @@
-<h1>Burgers!</h1>
+<!-- Nav Bar -->
+<nav class="navbar">
+  <!-- Links Navbar to main index page-->
+  <p class="navbar-brand">Eat My Burger</p>
+</nav>
 
-<h2>Burgers that have been eaten.</h2>
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">So Yummy!</h1>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that have not been eaten.</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <img src="https://i.imgur.com/YnD923v.png" class="rounded mx-auto d-block" alt="Burger">
   </div>
+</div>
+<!-- Jumbotron (End) -->
 
-  <div class="form-group">
-    <label for="devoured">Sleepy?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Eaten!<br>
-    <input type="radio" name="devoured" value="0"> Not Eaten
-  </div>
+<!-- Page Container-->
+<div class="container">
 
-  <button type="submit">Add Burger</button>
-</form>
+<div class="row">
+
+  <!-- Not Eaten Card -->
+  <div class="col-6">
+    <div class="card" id="not-eaten-card">
+        <div class="card-body">
+
+          <h2>Burgers that have not been eaten.</h2>
+          <br>
+          <ul>
+            {{#each burgers}}
+              {{#unless devoured}}
+                {{> burgers/burger-block devoured=false}}
+              {{/unless}}
+            {{/each}}
+          </ul>
+
+        </div> <!-- End of Card Body -->
+    </div> <!-- End of Eaten Card -->
+  </div> <!-- End of Eaten Column -->
+
+  <!-- Eaten Card -->
+  <div class="col-6">
+    <div class="card" id="eaten-card">
+        <div class="card-body">
+
+          <h2>Burgers that have been eaten.</h2>
+          <br>
+          <ul>
+            {{#each burgers}}
+              {{#if devoured}}
+                {{> burgers/burger-block devoured=true}}
+              {{/if}}
+            {{/each}}
+          </ul>
+
+        </div> <!-- End of Card Body -->
+    </div> <!-- End of Not Eaten Card -->
+  </div> <!-- End of Not Eaten Column -->
+
+</div> <!-- End of Row -->
+
+
+  <!-- Add Burger Card -->
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <div class="card" id="add-burger-card">
+        <div class="card-body">
+          <h2 class="text-center">Add a Burger</h2>
+            <form class="create-form">
+
+              <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="ca" name="name">
+              </div>
+
+              <button class="add-button" type="submit">Add Burger</button>
+            </form>
+
+        </div> <!-- End of Card Body -->
+    </div> <!-- End of Add Burger Card -->
+  </div> <!-- End of Add Card Column-->
+  <div class="col-3"></div>
+</div>
